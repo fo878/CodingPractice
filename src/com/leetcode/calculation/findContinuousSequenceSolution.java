@@ -41,7 +41,6 @@ public class findContinuousSequenceSolution {
         }
         return res;
     }
-
     public static void main(String[] args) {
         findContinuousSequenceSolution foo = new findContinuousSequenceSolution();
         int[][] continuousSequence = foo.findContinuousSequence(10);
