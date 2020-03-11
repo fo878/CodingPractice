@@ -34,6 +34,23 @@ package com.offer.test;
 * */
 import java.util.ArrayList;
 class printMatrixSolution {
+
+    public int[] spiralOrder(int[][] matrix) {
+        ArrayList<Integer> result = new ArrayList<Integer>();//用来保存打印出的数字
+        int m,n;
+        m = matrix.length;//行数
+        n = matrix[0].length;//列数
+        int mn = m*n;//总元素数
+        if(matrix==null || mn==0) { return new int[]{}; }
+        //按顺时针遍历矩阵
+        printElement(matrix,0,0,m-1,n-1,result);
+        int[] res = new int[result.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = result.get(i);
+                    }
+        return res;
+    }
+
     public ArrayList<Integer> printMatrix(int [][] matrix) {
         ArrayList<Integer> result = new ArrayList<Integer>();//用来保存打印出的数字
         int m,n;
