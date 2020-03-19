@@ -1,4 +1,4 @@
-package com.wrong;
+package com.leetcode.DataStructure.array;
 
 import java.util.Stack;
 
@@ -14,21 +14,17 @@ import java.util.Stack;
 * */
 public class validateStackSequencesSolution {
     public boolean validateStackSequences(int[] pushed, int[] popped) {
-        if (pushed.length != popped.length) return false;
-        int i=0,j=0;
-        Stack<Integer> stack = new Stack<Integer>();
-        while (i<pushed.length && j<popped.length){
-            if (stack.peek() == popped[j] && !stack.isEmpty()){
+        if (pushed == null || popped == null || pushed.length != popped.length) return false;
+        int N = pushed.length;
+        int j = 0;
+        Stack<Integer> stack = new Stack();
+        for(int x : pushed){
+            stack.push(x);
+            while(!stack.isEmpty() && stack.peek() == popped[j]){
                 stack.pop();
-                if (j == popped.length-1){
-                    return true;
-                }
                 j++;
-            }else {
-                stack.push(pushed[i]);
-                i++;
             }
         }
-        return false;
+        return j==N;
     }
 }
