@@ -4,6 +4,8 @@ import org.junit.Test;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class TestIO {
     @Test //输入为一个字符串
@@ -62,5 +64,16 @@ public class TestIO {
         for (int num: nums) {
             System.out.print(num + " ");
         }
+    }
+
+    public void test4() throws IOException{
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] nums = new int[n];
+        for(int i = 0; i < n; i++){
+            nums[i] = scan.nextInt();//能力值
+        }
+        System.out.println(n);
+        System.out.println(Arrays.toString(nums));
     }
 }
