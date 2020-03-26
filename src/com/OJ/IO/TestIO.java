@@ -4,7 +4,9 @@ import org.junit.Test;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class TestIO {
@@ -66,14 +68,102 @@ public class TestIO {
         }
     }
 
+    @Test
     public void test4() throws IOException{
+        //输入为一个字符串,字符串全是整数用空格隔开
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         int[] nums = new int[n];
         for(int i = 0; i < n; i++){
-            nums[i] = scan.nextInt();//能力值
+            nums[i] = scan.nextInt();
         }
         System.out.println(n);
         System.out.println(Arrays.toString(nums));
+    }
+
+    @Test
+    public void test5() throws IOException{
+        //输入一个3行4列的二维数组
+        /*
+            3 4
+            1 2 3 4
+            2 3 4 5
+            3 4 5 6
+        * */
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int[][] array = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = sc.nextInt();
+            }
+        }
+        //打印二维数组，m行，n列
+        for (int i=0 ; i<m ; i++) {
+            for(int j=0 ;j<n ;j++)
+            {
+                System.out.print(array[i][j]+" ");
+            }
+            System.out.println( );
+        }
+    }
+
+    @Test
+    public void test6() throws IOException{
+        //输入任意矩阵
+        /*
+            "1,2,3;4,5,6;7,8,9"
+        * */
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String line = br.readLine();
+        String s = line.substring(1,line.length()-1);
+        int[][] d;
+        String[] sFirst=s.split(";");
+        d=new int[sFirst.length][];
+        for(int i=0;i<sFirst.length;i++){
+            String[] sSecond=sFirst[i].split(",");
+            d[i]=new int[sSecond.length];
+            for(int j=0;j<sSecond.length;j++){
+                d[i][j]=Integer.parseInt(sSecond[j]);
+            }
+        }
+
+        for(int i=0;i<d.length;i++){
+            for(int j=0;j<d[i].length;j++){
+                System.out.print(d[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    public void test7() throws IOException{
+        //输入任意矩阵
+        /*
+            {{1,2,3,4},{2,3,4,5},{3,4,5,6}}
+            先转化成
+            1,2,3;4,5,6;7,8,9
+        * */
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String line = br.readLine();
+        String s = line.substring(2,line.length()-2).replaceAll("\\{", "").replaceAll("},", ";");
+        int[][] d;
+        String[] sFirst=s.split(";");
+        d=new int[sFirst.length][];
+        for(int i=0;i<sFirst.length;i++){
+            String[] sSecond=sFirst[i].split(",");
+            d[i]=new int[sSecond.length];
+            for(int j=0;j<sSecond.length;j++){
+                d[i][j]=Integer.parseInt(sSecond[j]);
+            }
+        }
+
+        for(int i=0;i<d.length;i++){
+            for(int j=0;j<d[i].length;j++){
+                System.out.print(d[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }
