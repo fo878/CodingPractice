@@ -1,4 +1,4 @@
-package com.wrong;
+package com.leetcode.DataStructure.Tree;
 /*
 *给定一个单词列表，我们将这个列表编码成一个索引字符串 S 与一个索引列表 A。
 例如，如果这个列表是 ["time", "me", "bell"]，我们就可以将其表示为 S = "time#bell#" 和 indexes = [0, 2, 5]。
@@ -11,8 +11,26 @@ package com.wrong;
 *
 * */
 
-public class minimumLengthEncodingSolution {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class minimumLengthEncodingSolution2 {
+
+    /*
+    这里用字典树来做
+    * */
     public int minimumLengthEncoding(String[] words) {
-        return 0;
+        int len = 0;
+        Trie trie = new Trie();
+        // 先对单词列表根据单词长度由长到短排序
+        Arrays.sort(words, (s1, s2) -> s2.length() - s1.length());
+        // 单词插入trie，返回该单词增加的编码长度
+        for (String word : words) {
+            len += trie.insert(word);
+        }
+        return len;
     }
+
 }

@@ -17,5 +17,6 @@ public class customSortStringSolution {
             arr[i] = S.charAt(i-1);
         }
         int[] res = new int[T.length()+1];
+        return "";
     }
 }

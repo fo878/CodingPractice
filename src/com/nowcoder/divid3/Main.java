@@ -1,5 +1,6 @@
 package com.nowcoder.divid3;
-import java.io.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 /*
 * 1 12 123 1234 12345

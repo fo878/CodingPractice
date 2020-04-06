@@ -3,6 +3,7 @@ package com.nowcoder.box;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /*
 * 我们有一堆商品，要装到箱子中。已知箱子的容积是3，也知道每个商品的体积。
@@ -20,11 +21,30 @@ public class Main {
         String line = br.readLine();
         String[] strings = line.trim().split(",");
         int[] nums = new int[strings.length];
-        int sum = 0;
         for (int i = 0; i < strings.length; i++) {
-            nums[i] =  Integer.parseInt(strings[i]);
+            nums[i] = Integer.parseInt(strings[i]);
+        }
+        System.out.println(maxSumDivThree(nums)/3);
+    }
+
+    public static int maxSumDivThree(int[] nums){
+        int ans = 0,sum = 0;
+        for(int i = 0;i<nums.length;i++){
             sum += nums[i];
         }
-        System.out.println(sum/3);
+        Arrays.sort(nums);
+        if (sum%3==0) {return sum;}
+        for (int i = 0; i < nums.length; i++) {
+            if ((sum - nums[i])%3 == 0){
+                ans = Math.max(ans,sum-nums[i]);
+            }
+            for (int j = i+1; j < nums.length; j++) {
+                if ((sum-nums[i]-nums[j])%3 == 0){
+                    ans = Math.max(ans,sum-nums[i]-nums[j]);
+                    break;
+                }
+            }
+        }
+        return ans;
     }
 }
