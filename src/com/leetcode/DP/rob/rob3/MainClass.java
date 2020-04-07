@@ -1,7 +1,5 @@
-package com.leetcode.DP.rob3;
+package com.leetcode.DP.rob.rob3;
 
-
-import com.leetcode.DataStructure.Tree.OrderTree;
 
 import java.io.BufferedReader;
 import java.io.IOException;

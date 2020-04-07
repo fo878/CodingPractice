@@ -1,4 +1,4 @@
-package com.leetcode.DP;
+package com.leetcode.DP.rob;
 
 import java.util.Arrays;
 
