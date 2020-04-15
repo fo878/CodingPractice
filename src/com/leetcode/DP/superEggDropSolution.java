@@ -1,4 +1,7 @@
 package com.leetcode.DP;
+
+import java.util.Arrays;
+
 /*
 
     Hard
@@ -11,7 +14,17 @@ package com.leetcode.DP;
 
 * */
 public class superEggDropSolution {
-    public int superEggDrop(int K, int N) {
-        return 0;
+
+    public static int superEggDrop(int K, int N) {
+        int res = 0;
+        int[][] dp = new int[K+1][N+1];
+        
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int k = 1;
+        int n = 3;
+        System.out.println(superEggDrop(k,n));
     }
 }

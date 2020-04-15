@@ -32,5 +32,6 @@ public class KMP {
         KMP test = new KMP();
         int res = test.strIndex("aaaabcd", "abc");
         System.out.println(res);
+
     }
 }
