@@ -13,26 +13,15 @@ import java.util.LinkedList;
 * */
 public class isSubsequenceSolution {
     public static boolean isSubsequence(String s, String t) {
-        int n = s.length();
-        int m = t.length();
-        int j = 0;
-        int i = 0;
-        while (i < n) {
-            while (j < m){
-                if (i==n-1 && s.charAt(i)==t.charAt(j)){
-                    return true;
-                }
-                if (s.charAt(i)==t.charAt(j)){
-                    j++;
-                    i++;
-                }else {
-                    j++;
-                }
-                System.out.println("i:" + i);
-                System.out.println("j:" + j);
+        char[] arr = s.toCharArray();
+        int j = -1;
+        for (int i = 0; i < arr.length; i++) {
+            j = t.indexOf(arr[i], j + 1);
+            if (j == -1) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {
