@@ -1,6 +1,5 @@
-package com.leetcode.DataStructure.cache.LRU;
+package com.leetcode.DataStructure.cache.LRU1;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

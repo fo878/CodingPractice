@@ -3,7 +3,11 @@ package com.leetcode.DataStructure.array;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
+/*
+* 560. 和为K的子数组
+* 给定一个整数数组和一个整数 k，你需要找到该数组中和为 k 的连续的子数组的个数。
+*
+* */
 public class subarraySumSolution {
     public int subarraySum(int[] nums, int k){
         //key为前缀和，value为前缀和对应的个数
