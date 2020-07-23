@@ -1,4 +1,4 @@
-package com.leetcode.DataStructure.Tree;
+package com.leetcode.DataStructure.Tree.BST;
 /*
 * 二叉查找树的实现
 * */
