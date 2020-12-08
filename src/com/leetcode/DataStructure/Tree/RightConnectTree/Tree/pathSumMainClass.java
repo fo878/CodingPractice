@@ -1,10 +1,13 @@
-package com.leetcode.DataStructure.Tree;
+package com.leetcode.DataStructure.Tree.RightConnectTree.Tree;
 
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 class pathSum1Solution {
     LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();

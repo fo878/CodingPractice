@@ -1,8 +1,8 @@
-package com.leetcode.DataStructure.Tree;
+package com.leetcode.DataStructure.Tree.RightConnectTree.Tree.OrderTree;
 
-import com.sun.jmx.remote.internal.ArrayQueue;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /*
 *  层序遍历  之字打印

@@ -1,4 +1,4 @@
-package com.leetcode.DataStructure.Tree;
+package com.leetcode.DataStructure.Tree.RightConnectTree.Tree;
 
 import java.util.Stack;
 

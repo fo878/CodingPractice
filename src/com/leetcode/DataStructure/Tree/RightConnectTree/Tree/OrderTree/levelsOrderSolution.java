@@ -1,4 +1,4 @@
-package com.leetcode.DataStructure.Tree;
+package com.leetcode.DataStructure.Tree.RightConnectTree.Tree.OrderTree;
 //从上到下打印二叉树
 /*
 * 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
@@ -7,7 +7,10 @@ package com.leetcode.DataStructure.Tree;
 * 广度优先搜索BFS，使用优先队列
 * */
 
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class levelsOrderSolution {
     /*算法流程：
