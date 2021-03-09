@@ -1,6 +1,14 @@
 package com.leetcode.DataStructure.UnionFind;
 /*
 数组实现并查集的数据结构
+
+并查集的成员变量有 count;parent[];size;
+并查集的构造方法 UnionFind(n);
+并查集的方法
+    ***连接union(p,q),  要维护连通分量个数和树的重量
+    **路径压缩find(x),
+    *连通分量count(),
+    *连通判断connected(int p, int q)
 */
 
 class UnionFind {
@@ -44,6 +52,28 @@ class UnionFind {
         }
 
         count -= 1;//联合两个点后，连通分量-1
+    }
+
+    /*
+     * 让p和q的根相连，并且让树的高度最小
+     * */
+    public boolean unite(int p, int q) {
+        int rootP = find(p);
+        int rootQ = find(q);
+        if (rootP == rootQ){
+            return false;
+        }
+        //小树要接到大树下面会比较平衡
+        if (size[rootP]>size[rootQ]){
+            parent[rootQ] = rootP;//Q的重量小，Q接到P上，Q的父节点为P
+            size[rootP] += size[rootQ];//更新P的重量，为原来的重量+Q的重量
+        }else {
+            parent[rootP] = rootQ;
+            size[rootQ] += size[rootP];
+        }
+
+        count -= 1;//联合两个点后，连通分量-1
+        return true;
     }
 
     /*

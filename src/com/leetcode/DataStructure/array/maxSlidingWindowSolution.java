@@ -1,11 +1,10 @@
 package com.leetcode.DataStructure.array;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
+import java.util.*;
 
 /*
 * 面试题59 - I. 滑动窗口的最大值
+* 239. 滑动窗口最大值
 * 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。
 
 示例:
@@ -25,6 +24,28 @@ n = 8
 
 * */
 public class maxSlidingWindowSolution {
+    public int[] maxSlidingWindow1(int[] nums,int k) {
+        int n = nums.length;
+        PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0] != o2[0] ? o2[0]-o1[0] : o2[1]-o1[1];
+            }
+        });
+        for (int i = 0; i < k; i++) {
+            pq.offer(new int[]{nums[i],i});
+        }
+        int[] ans = new int[n-k+1];
+        ans[0] = pq.peek()[0];
+        for (int i = k; i < n; i++) {
+            pq.offer(new int[]{nums[i],i});
+            while(pq.peek()[1] <= i-k) {
+                pq.poll();
+            }
+            ans[i-k+1] = pq.peek()[0];
+        }
+        return ans;
+    }
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums.length == 0){
             return new int[]{};
@@ -63,6 +84,6 @@ public class maxSlidingWindowSolution {
         int[] nums = {1,3,-1,-3,5,3,6,7};
         int k = 3;
         maxSlidingWindowSolution foo = new maxSlidingWindowSolution();
-        System.out.println(Arrays.toString(foo.maxSlidingWindow(nums,k)));
+        System.out.println(Arrays.toString(foo.maxSlidingWindow1(nums,k)));
     }
 }

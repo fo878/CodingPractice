@@ -3,7 +3,8 @@ package com.leetcode.DataStructure.UnionFind;
 import java.util.Arrays;
 
 /*
-* 685. 冗余连接 II
+* 684. 冗余连接  (无向图)
+* 685. 冗余连接 II (有向图)
 *
 在本问题中，有根树指满足以下条件的有向图。该树只有一个根节点，所有其他节点都是该根节点的后继。
 每一个节点只有一个父节点，除了根节点没有父节点。
@@ -16,8 +17,7 @@ import java.util.Arrays;
 * */
 public class findRedundantDirectedConnectionSolution {
 
-
-    public int[] findRedundantDirectedConnection(int[][] edges) {
+    public int[] findRedundantDirectedConnection2(int[][] edges) {
         int nodesCount = edges.length;
         UnionFind uf = new UnionFind(nodesCount + 1);
         int[] parent = new int[nodesCount + 1];
@@ -63,7 +63,7 @@ public class findRedundantDirectedConnectionSolution {
                 {2,3}
         };
         findRedundantDirectedConnectionSolution foo = new findRedundantDirectedConnectionSolution();
-        String res = Arrays.toString(foo.findRedundantDirectedConnection(edges));
+        String res = Arrays.toString(foo.findRedundantDirectedConnection2(edges));
         System.out.println(res);
     }
 }

@@ -10,7 +10,7 @@ package com.leetcode.DataStructure.Tree.OrderTree;
 
 import java.util.*;
 
-public class levelsOrderSolution {
+public class  levelsOrderSolution {
     /*算法流程：
     特例处理： 当树的根节点为空，则直接返回空列表 [] ；
     初始化： 打印结果列表 res = [] ，包含根节点的队列 queue = [root] ；
